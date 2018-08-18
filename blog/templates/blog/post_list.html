@@ -7,19 +7,12 @@
             <h1><a href="https://www.facebook.com/keshav.kumarjha.5621">NEO's blog</a></h1>
         </div>
 
+        {% for post in posts %}
         <div>
-            <p>published: 19.08.2018, 02:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Hola amigos!!!<br />
-                From now onwards you will get to know some exciting stories, poems and much more...<br />
-            So stay tuned.</p>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="https://www.facebook.com/keshav.kumarjha.5621">{{ post.title }}</a></h1>
+            <p>{{ post.txt|linebreaksbr }}</p>
         </div>
-
-        <div>
-            <p>published: 19.08.2018, 02:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>As promised, we are back with a story.<br />
-            Story of <del>4 friends</del> <ins>3 friends</ins></p>
-        </div>
+        {% endfor %}
     </body>
 </html>
